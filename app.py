@@ -40,7 +40,7 @@ admin_email = user_data.get("admin", "")
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("google-creds.json", scope)
 client = gspread.authorize(creds)
-sheet = client.open_by_key(7a24f2bf739dfaa66b527d2d03f6c72fb7aa7f900e225644d6a66f10179a1596d2281ef6683950a0).sheet1  # Replace with your actual spreadsheet ID
+sheet = client.open_by_key("7a24f2bf739dfaa66b527d2d03f6c72fb7aa7f900e225644d6a66f10179a1596d2281ef6683950a0").sheet1  # Replace with your actual spreadsheet ID
 
 @app.route('/scrape', methods=['POST'])
 def scrape_yelp():
