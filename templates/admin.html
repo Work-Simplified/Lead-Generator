@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, select, button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Admin User Management</h2>
+  <p>Admin Email: {{ admin }}</p>
+
+  <form method="POST">
+    <input type="hidden" name="admin" value="{{ admin }}">
+    <input type="email" name="email" placeholder="user@example.com" required>
+    <select name="action">
+      <option value="add">Add User</option>
+      <option value="remove">Remove User</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Authorized Users:</h3>
+  <ul>
+    {% for user in users %}<li>{{ user }}</li>{% endfor %}
+  </ul>
+
+  <hr>
+  <a href="/admin/logs?admin={{ admin }}">Download Usage Logs (CSV)</a>
+</body>
+</html>

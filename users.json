@@ -1,0 +1,4 @@
+{
+  "admin": "you@example.com",
+  "authorized_users": ["you@example.com"]
+}
